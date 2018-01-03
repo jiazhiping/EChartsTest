@@ -1,0 +1,182 @@
+@charset "utf-8";
+/* CSS Document */
+/***
+ * author:zhq
+ */
+a{	text-decoration: none;  color:#404040;}
+a:hover {	color: #000000;	text-decoration: underline;}
+img {	border:0px; vertical-align:middle;}
+body,td,th {
+	font-size: 14px;
+	color: #000000;
+	font-family:Arial, Helvetica, sans-serif;
+}
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+.righttd{
+    background:#F6F6F6;
+	border-right:1px solid #000000;
+	border-left:3px solid #000000;
+	border-top:0px solid #000000;
+	border-bottom:0px solid #000000;
+}
+.tablestyle{
+    background:#FFFFFF;
+	border:1px solid #000000;
+}
+.tablestyle2{
+    background:#FFFFFF;
+	border-bottom:1px solid #CC0000;
+}
+.tablestyle3{
+    background:#FFFFFF;
+	border-right:1px solid #CC0000;
+}
+.tablestyle4{
+    background:#FFFFFF;
+	border-right:0px solid #CC0000;
+	font-weight:bold;
+}
+.redtitle{
+    font-size:30px;
+	color:#CC0000;
+	font-weight:bold;
+}
+.redtitle2{
+    font-size:24px;
+	color:#CC0000;
+	font-weight:bold;
+}
+.text12{
+    font-size:14px;
+	color:#000000;
+}
+.textred12{
+    font-size:14px;
+	color:#CC0000;
+}
+.red14{
+    font-size:14px;
+	color:#CC0000;
+}
+.red20{
+    font-size:19px;
+	color:#CC0000;
+	font-weight:bold;
+}
+.select{
+    font-size:14px;
+	color:#000000;
+}
+.inputtext3{
+    font-size:12px;
+	color:#000000;
+	height:16px;
+	border:0;
+	border-bottom:1px solid #cccccc;
+}
+.inputtext4{
+    font-size:12px;
+	color:#000000;
+	height:16px;
+	border:0;
+	border-bottom:1px solid #cccccc;
+	text-align:center;
+}
+.inputtext1{
+    font-size:12px;
+	color:#000000;
+	border:0 solid #FFFFFF;
+	border-bottom:1px solid #CC0000;
+}
+.inputtext2{
+    font-size:12px;
+	color:#000000;
+	border:0 solid #FFFFFF;
+	border-bottom:1px solid #000000;
+}
+.inputtextarea{
+    font-size:12px;
+	color:#000000;
+	border:0 solid #FFFFFF;
+	border-bottom:1px solid #999999;
+	border-right:1px solid #999999;
+	border-left:1px solid #999999;
+	border-top:1px solid #999999;
+	width:80%;
+}
+.inputButton{
+    background:url(../images/common/tool_btn.gif) repeat-x; line-height:22px; height:22px; 
+ 	border:solid 1px #d3dbde;cursor:pointer;
+}
+.titlehead{
+     border-top:1px solid #cc0000;
+     border-bottom:4px solid #cc0000;
+	 background-color:#F5F5F5;
+}
+.red:link {
+	color: #000000;
+	text-decoration: none;
+	font-family:"宋体";
+	font-weight:bold;
+	font-size:16px;
+}
+.red:visited {
+	text-decoration: none;
+	color: #000000;
+	font-family:"宋体";
+	font-weight:bold;
+	font-size:16px;
+}
+.red:hover {
+	text-decoration: none;
+	color: #FF0000;
+	font-family:"宋体";
+	font-weight:bold;
+	font-size:16px;
+}
+.red:active {
+	text-decoration: none;
+	color: #000000;
+	font-family:"宋体";
+	font-weight:bold;
+	font-size:16px;
+}
+
+.yjtype{
+	margin-left: 25px;
+}
+
+.zhengwen{
+	margin-left: 20px;
+}
+
+.gaozhi_titleleft{ background:url(../images/common/xuanzhang_01.jpg) no-repeat; width:145px; height:46px; line-height:46px; color:#FFF; font-size:18px; font-weight:bold; padding-left:20px; }
+.gaozhi_titleright{ background:url(../images/common/xuanzhang_02.jpg) repeat-x; text-align:right; padding-right:10px;}
+.gaozhi_btnleft{ background:url(../images/common/gaozhi_03.png) no-repeat; width:13px; height:28px; float:left; margin-left:10px;}
+.gaozhi_btnbj{ background:url(../images/common/gaozhi_05.png) no-repeat no-repeat right #f24554; padding-right:47px; float:left; line-height:28px; color:#FFF; font-size:12px; font-weight:bold;}
+.gaozhi_btnlast{ background: url(../images/common/gaozhi_07.png) no-repeat right;  padding-right:13px; height:28px; line-height:28px; color:#FFF; font-size:12px; font-weight:bold; float:left;}
+.gaozhi_titleright a{ color:#FFF;}
+.gaozhi_titleright a:hover{ color: #FF0; text-decoration:none;}
+.gaozhi_btnArea{ background:url(../images/common/xuanzhang_02.jpg) repeat-x #e8e8e8; border-bottom:1px solid #CCC;}
+.gaozhi_tishi, .gaozhi_tishi a{ font-size:12px; text-decoration:underline;}
+.gaozhi_inputbtn{ border:1px solid #9c9f9e; background: url(../images/common/gaozhi_btn_16.png) #dfe0e1 repeat-x; height:20px; line-height:18px;}
+.gaozhi_rele{position: absolute; display:none;height: 100px;}
+.gaozhi_rele_btn{background:url(../images/common/gaozhi_08.png) no-repeat;width:88px;height:28px; padding-left:20px; margin-left:5px;float:left; line-height:28px; color:#FFF; font-size:12px; font-weight:bold;}
+.gaozhi_rele_btn a{	text-decoration: none;  color:#FFF;}
+.gaozhi_rele_btn a:hover {color: #FF0; text-decoration:none;}
+
+
+.form_btn_area{ position:fixed; top:0; height: 40px;  width: 100%; padding-top: 10px; background: #f4f4f4; border-bottom: 1px solid #cccccc;}
+.form_btn_area_center{ width: 980px; margin: 0 auto; text-align: right;}
+.form_btn_area_btn{ display: inline-block; margin-right: 20px; padding: 10px 25px; line-height: 16px; font-size: 14px; color: #ffffff}
+a.form_btn_area_btn{ color: #ffffff}
+.form_btn_area_btn:hover{ text-decoration: none; color: #ffff00;}
+.form_btn_orange{ background: #ec9600; border: 1px solid #d08400;}
+.form_btn_green{ background: #42a23a; border: 1px solid #1e621c;}
+.form_btn_blue{ background: #3a7ca2; border: 1px solid #155c85;}
+.form_btn_grey{ background: #6b828a; border: 1px solid #4c5a64;}
