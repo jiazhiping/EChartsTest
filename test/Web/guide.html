@@ -1,0 +1,282 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>GuideTest</title>
+		<script src="www2/js/echarts-all.js"></script>
+	</head>
+
+	<body>
+		<div id="main" style="width: 800px;height:600px;"></div>
+		<script>
+			var myChart = echarts.init(document.getElementById('main'));
+			option = {
+				title: {
+					text: '人物关系：田小娥',
+					subtext: '数据来自人立方',
+					x: 'right',
+					y: 'bottom'
+				},
+				tooltip: {
+					trigger: 'item',
+					formatter: '{a} : {b}'
+				},
+				toolbox: {
+					show: true,
+					feature: {
+						restore: {
+							show: true
+						},
+						magicType: {
+							show: true,
+							type: ['force', 'chord']
+						},
+						saveAsImage: {
+							show: true
+						}
+					}
+				},
+				legend: {
+					x: 'left',
+					data: ['家人', '朋友']
+				},
+				series: [{
+					type: 'force',
+					name: "人物关系",
+					ribbonType: false,
+					categories: [{
+							name: '人物'
+						},
+						{
+							name: '家人',
+							symbol: 'diamond'
+						},
+						{
+							name: '朋友'
+						}
+					],
+					itemStyle: {
+						normal: {
+							label: {
+								show: true,
+								textStyle: {
+									color: '#333'
+								}
+							},
+							nodeStyle: {
+								brushType: 'both',
+								borderColor: 'rgba(255,215,0,0.4)',
+								borderWidth: 1
+							}
+						},
+						emphasis: {
+							label: {
+								show: false
+								// textStyle: null      // 默认使用全局文本样式，详见TEXTSTYLE
+							},
+							nodeStyle: {
+								//r: 30
+							},
+							linkStyle: {}
+						}
+					},
+					minRadius: 15,
+					maxRadius: 25,
+					gravity: 1.1,
+					scaling: 1.2,
+					draggable: false,
+					linkSymbol: 'arrow',
+					steps: 10,
+					coolDown: 0.9,
+					//preventOverlap: true,
+					nodes: [{
+							category: 0,
+							name: '田小娥',
+							value: 10,
+							symbol: 'image://http://www.damndigital.com/wp-content/uploads/2010/12/steve-jobs.jpg',
+							symbolSize: [60, 35],
+							draggable: true,
+							itemStyle: {
+								normal: {
+									label: {
+										position: 'right',
+										textStyle: {
+											color: 'black'
+										}
+									}
+								}
+							}
+						},
+						{
+							category: 1,
+							name: '黑娃',
+							value: 2
+						},
+						{
+							category: 1,
+							name: '白孝文',
+							value: 3
+						},
+						{
+							category: 1,
+							name: '鹿子霖',
+							value: 3
+						},
+						{
+							category: 1,
+							name: '白嘉轩',
+							value: 7
+						},
+						{
+							category: 2,
+							name: '鹿三',
+							value: 5
+						},
+						{
+							category: 2,
+							name: '鹿兆鹏',
+							value: 8
+						},
+						{
+							category: 2,
+							name: '仙草',
+							value: 9
+						},
+						{
+							category: 2,
+							name: '百灵',
+							value: 4
+						},
+						{
+							category: 2,
+							name: '白孝武',
+							value: 4
+						},
+						{
+							category: 2,
+							name: '鹿兆海',
+							value: 1
+						},
+					],
+					links: [{
+							source: '黑娃',
+							target: '田小娥',
+							weight: 1,
+							name: '丈夫',
+							itemStyle: {
+								normal: {
+									width: 1.5,
+									color: 'red'
+								}
+							}
+						},
+						{
+							source: '田小娥',
+							target: '黑娃',
+							weight: 1,
+							name: '妻子',
+							itemStyle: {
+								normal: {
+									color: 'red'
+								}
+							}
+						},
+						{
+							source: '白孝文',
+							target: '田小娥',
+							weight: 2,
+							name: '丈夫'
+						},
+						{
+							source: '鹿子霖',
+							target: '田小娥',
+							weight: 1,
+							name: '母亲'
+						},
+						{
+							source: '白嘉轩',
+							target: '田小娥',
+							weight: 2
+						},
+						{
+							source: '鹿三',
+							target: '田小娥',
+							weight: 3,
+							name: '合伙人'
+						},
+						{
+							source: '鹿兆鹏',
+							target: '田小娥',
+							weight: 1
+						},
+						{
+							source: '仙草',
+							target: '田小娥',
+							weight: 6,
+							name: '竞争对手'
+						},
+						{
+							source: '百灵',
+							target: '田小娥',
+							weight: 1,
+							name: '爱将'
+						},
+						{
+							source: '白孝武',
+							target: '田小娥',
+							weight: 1
+						},
+						{
+							source: '鹿兆海',
+							target: '田小娥',
+							weight: 1
+						},
+						{
+							source: '白孝武',
+							target: '保罗-乔布斯',
+							weight: 1
+						},
+						{
+							source: '鹿三',
+							target: '保罗-乔布斯',
+							weight: 1
+						},
+						{
+							source: '鹿三',
+							target: '白孝武',
+							weight: 1
+						},
+						{
+							source: '鹿三',
+							target: '鹿兆海',
+							weight: 1
+						},
+						{
+							source: '鹿三',
+							target: '鹿子霖',
+							weight: 1
+						},
+						{
+							source: '白嘉轩',
+							target: '鹿三',
+							weight: 6
+						},
+						{
+							source: '白嘉轩',
+							target: '白孝武',
+							weight: 1
+						},
+						{
+							source: '仙草',
+							target: '鹿三',
+							weight: 1
+						}
+					]
+				}]
+			};
+			myChart.setOption(option);
+		</script>
+	</body>
+
+</html>
