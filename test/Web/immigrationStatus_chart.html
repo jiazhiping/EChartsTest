@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>移民查询统计</title>
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
+		<script src="js/jquery.min.js"></script>
+		<!--<script src="www2/js/echarts-all.js"></script>-->
+		<!--<script src="js/echarts.js"></script>-->
+		<script src="echarts.js"></script>
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+		<script>
+			//切换效果
+			var items = [];
+
+			$(function() {
+				items = document.querySelectorAll('.statistic_list .item');
+				for(var i = 0; i < items.length; i++) {
+					items[i].dataset.order = i + 1;
+				}
+			});
+
+			function change(clickIndex) {
+				var activeItem = document.querySelector('.statistic_list .active');
+				var activeIndex = activeItem.dataset.order;
+				var clickItem = this.items[clickIndex - 1];
+				if(activeIndex === clickIndex) {
+					return;
+				}
+				activeItem.classList.remove('active');
+				clickItem.classList.add('active');
+				_setStyle(clickItem, activeItem);
+			}
+
+			function _setStyle(el1, el2) {
+				var transform1 = el1.style.transform;
+				var transform2 = el2.style.transform;
+				el1.style.transform = transform2;
+				el2.style.transform = transform1;
+			}
+		</script>
+	</head>
+
+	<body>
+
+		<div class="statistic_main">
+			<div class="statistic_warp">
+				<div class="statistic_list">
+					<div id="itemOne" class="item" onclick="change('1');" style="transform: translate(-32%,-23%) scale(0.33);"></div>
+					<div id="itemTwo" class="item" onclick="change('2');" style="transform: translate(-32%,23%) scale(0.33);"></div>
+					<div id="itemThree" class="item active" onclick="change('3');" style="transform: translate(32%, 0.5%) scale(1.012);"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script>
+		//echarts
+		var myChart1 = echarts.init(document.getElementById('itemOne'));
+		var myChart2 = echarts.init(document.getElementById('itemTwo'));
+		var myChart3 = echarts.init(document.getElementById('itemThree'));
+		option1 = {
+			tooltip: {
+				trigger: 'axis',
+				axisPointer: {
+					type: 'shadow',
+					label: {
+						show: true
+					}
+				}
+			},
+			calculable: true,
+			legend: {
+				data: ['Growth', '总库容', '总装机总量', '总扶持移民人口', '总原迁移民人口'],
+				itemGap: 4
+			},
+			grid: {
+				top: '12%',
+				left: '1%',
+				right: '10%',
+				containLabel: true
+			},
+			xAxis: [{
+				type: 'category',
+				data: ['丽江市', '大理市', '昆明市', '玉溪市', '普洱市']
+			}],
+			yAxis: [{
+				type: 'value',
+				name: '移民查询统计'
+			}],
+			dataZoom: [{
+					show: true,
+					start: 0,
+					end: 100
+				},
+				{
+					type: 'inside',
+					start: 94,
+					end: 100
+				}
+			],
+			series: [{
+					name: '总库容',
+					type: 'bar',
+					data: ['0.32', '0.1213', '0.713', '2', '3']
+				},
+				{
+					name: '总装机总量',
+					type: 'bar',
+					data: ['5', '21', '4', '5', '6']
+				},
+				{
+					name: '总扶持移民人口',
+					type: 'bar',
+					data: ['400', '1023', '302', '200', '103']
+				},
+				{
+					name: '总原迁移民人口',
+					type: 'bar',
+					data: ['300', '200', '100', '90', '20']
+				}
+			]
+		};
+		option2 = {
+			tooltip: {
+				trigger: 'axis',
+				axisPointer: {
+					type: 'shadow',
+					label: {
+						show: true
+					}
+				}
+			},
+			calculable: true,
+			legend: {
+				data: ['Growth', '总库容', '总装机总量', '总扶持移民人口', '总原迁移民人口'],
+				itemGap: 4
+			},
+			grid: {
+				top: '12%',
+				left: '1%',
+				right: '10%',
+				containLabel: true
+			},
+			xAxis: [{
+				type: 'category',
+				data: ['丽江市', '大理市', '昆明市', '玉溪市', '普洱市']
+			}],
+			yAxis: [{
+				type: 'value',
+				name: '移民查询统计'
+			}],
+			dataZoom: [{
+					show: true,
+					start: 0,
+					end: 100
+				},
+				{
+					type: 'inside',
+					start: 94,
+					end: 100
+				}
+			],
+			series: [{
+					name: '总库容',
+					type: 'line',
+					data: ['0.32', '0.1213', '0.713', '2', '3']
+				},
+				{
+					name: '总装机总量',
+					type: 'line',
+					data: ['5', '21', '4', '5', '6']
+				},
+				{
+					name: '总扶持移民人口',
+					type: 'line',
+					data: ['400', '1023', '302', '200', '103']
+				},
+				{
+					name: '总原迁移民人口',
+					type: 'line',
+					data: ['300', '200', '100', '90', '20']
+				}
+			]
+		};
+		option3 = {
+			title: {
+				text: '移民查询统计',
+				subtext: '云南省有大型移民53座，中型水库132座，小型水库234座，其他水库13座。',
+				x: 'center',
+				top: '10%'
+			},
+			tooltip: {
+				trigger: 'item',
+				formatter: "{a} <br/>{b} : {c} ({d}%)"
+			},
+			legend: {
+				orient: 'vertical',
+				left: '10%',
+				top: '10%',
+				data: ['大型', '中型', '小型', '其他']
+			},
+			series: [{
+				name: '座数',
+				type: 'pie',
+				radius: '55%',
+				center: ['50%', '60%'],
+				data: [{
+						value: 53,
+						name: '大型'
+					},
+					{
+						value: 132,
+						name: '中型'
+					},
+					{
+						value: 234,
+						name: '小型'
+					},
+					{
+						value: 13,
+						name: '其他'
+					}
+				],
+				itemStyle: {
+					emphasis: {
+						shadowBlur: 10,
+						shadowOffsetX: 0,
+						shadowColor: 'rgba(0, 0, 0, 0.5)'
+					}
+				}
+			}]
+		};
+		// 使用刚指定的配置项和数据显示图表。
+		myChart1.setOption(option1);
+		myChart2.setOption(option2);
+		myChart3.setOption(option3);
+	</script>
+
+</html>
