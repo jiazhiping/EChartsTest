@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>GuideTest</title>
+		<script src="echarts.js"></script>
+	</head>
+
+	<body>
+		<div id="main" style="width: 800px;height:600px;"></div>
+		<script>
+			var myChart = echarts.init(document.getElementById('main'));
+			option = {
+				angleAxis: {},
+				radiusAxis: {
+					type: 'category',
+					data: ['周一', '周二', '周三', '周四'],
+					z: 10
+				},
+				polar: {},
+				series: [{
+					type: 'bar',
+					data: [1, 2, 3, 4],
+					coordinateSystem: 'polar',
+					name: '这',
+					stack: 'a'
+				}, {
+					type: 'bar',
+					data: [2, 4, 6, 8],
+					coordinateSystem: 'polar',
+					name: '那',
+					stack: 'a'
+				}, {
+					type: 'bar',
+					data: [1, 2, 3, 4],
+					coordinateSystem: 'polar',
+					name: '外',
+					stack: 'a'
+				}],
+				legend: {
+					show: true,
+					data: ['这', '那', '外']
+				}
+			};
+
+			myChart.setOption(option);
+		</script>
+	</body>
+
+</html>
