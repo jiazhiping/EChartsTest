@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的主页</title>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("input").hover(
+                function () {
+                    $(this).css("background-color","#cccccc");
+            },
+                function () {
+                    $(this).css("background-color","#ffffff");
+                }
+            );
+           /* $("input").blur(function () {
+                $(this).css("background-color","#ffffff");
+            });*/
+        });
+    </script>
+</head>
+<body>
+    NAME: <input type="text" name="姓名"><br />
+    PASSWORD: <input type="text" name="密码">
+</body>
+</html>
